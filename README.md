@@ -58,26 +58,31 @@ To push past the current physical limits, future work will focus on:
 * **Heading Alignment:** Introducing a heading reward term to force the robot to face the direction of its commanded velocity vector, eliminating the instability of high-speed lateral crab-walking.
 * **Joint Penalty Tuning:** Relaxing joint acceleration and torque penalties at higher speeds to allow the policy to utilize the full range of the motor capacities.
 
----
+## 🚀 Integration & Execution Guide
 
-## 🚀 Execution & Visualization Guide
+This repository contains configuration files and checkpoints designed to be integrated with a standard installation of [NVIDIA Isaac Lab](https://github.com/isaac-sim/IsaacLab).
 
-### Prerequisites
-Activate your Conda environment and navigate to the project directory:
-```powershell
-cd IsaacLab
-conda activate env_isaaclab
-```
+### 1. Integration Steps
+To use these configurations and logs in your Isaac Lab directory:
 
-### 1. Training a Policy
-To train a policy from scratch using the current configurations:
+* Copy `configs/rsl_rl_ppo_cfg.py` into:
+  `IsaacLab/source/isaaclab_tasks/isaaclab_tasks/manager_based/locomotion/velocity/config/anymal_c/agents/rsl_rl_ppo_cfg.py`
+* Copy `configs/velocity_env_cfg.py` into:
+  `IsaacLab/source/isaaclab_tasks/isaaclab_tasks/manager_based/locomotion/velocity/velocity_env_cfg.py`
+* Copy the run directories inside `logs/` to:
+  `IsaacLab/logs/rsl_rl/anymal_c_rough/`
+
+### 2. Execution Commands
+Once the files are copied into your `IsaacLab` installation, activate your conda environment and run:
+
+#### Train the Policy:
 ```powershell
 python scripts/reinforcement_learning/rsl_rl/train.py --task Isaac-Velocity-Rough-Anymal-C-v0
 ```
 
-### 2. Playing Back checkpoints (Visualization)
-To visualize a trained run in the 3D Omniverse Kit viewer:
+#### Visualize a Checkpoint:
 ```powershell
 python scripts/reinforcement_learning/rsl_rl/play.py --task Isaac-Velocity-Rough-Anymal-C-v0 --load_run <RUN_DIR_NAME> --num_envs 32 --viz kit
 ```
-*(Replace `<RUN_DIR_NAME>` with the specific run folder, e.g. `2026-06-30_09-02-36`)*.
+*(Replace `<RUN_DIR_NAME>` with `2026-06-25_18-05-59` for the slow walk or `2026-06-30_09-02-36` for the fast walk)*.
+
