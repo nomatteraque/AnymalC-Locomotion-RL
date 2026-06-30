@@ -4,7 +4,7 @@ This repository contains the training configuration and results for training the
 
 ---
 
-## 🛠️ Key Configuration Files (Evidence of Work)
+## 🛠️ Key Configuration Files
 
 The core reinforcement learning configurations and environment setups are defined in the following files:
 
