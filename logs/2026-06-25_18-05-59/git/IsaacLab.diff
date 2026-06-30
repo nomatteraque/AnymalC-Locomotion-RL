@@ -1,0 +1,50 @@
+--- git commit ---
+28a37cecdd433c22d9eabd6a5954add9f13a8951
+
+
+--- git status ---
+HEAD detached at v3.0.0-beta2
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+	modified:   source/isaaclab_tasks/isaaclab_tasks/manager_based/locomotion/velocity/config/anymal_c/agents/rsl_rl_ppo_cfg.py
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	environment.yml.bak
+
+no changes added to commit (use "git add" and/or "git commit -a") 
+
+
+--- git diff ---
+diff --git a/source/isaaclab_tasks/isaaclab_tasks/manager_based/locomotion/velocity/config/anymal_c/agents/rsl_rl_ppo_cfg.py b/source/isaaclab_tasks/isaaclab_tasks/manager_based/locomotion/velocity/config/anymal_c/agents/rsl_rl_ppo_cfg.py
+index 4b27a2f745..135d2b83d3 100644
+--- a/source/isaaclab_tasks/isaaclab_tasks/manager_based/locomotion/velocity/config/anymal_c/agents/rsl_rl_ppo_cfg.py
++++ b/source/isaaclab_tasks/isaaclab_tasks/manager_based/locomotion/velocity/config/anymal_c/agents/rsl_rl_ppo_cfg.py
+@@ -35,7 +35,7 @@ class AnymalCRoughPPORunnerCfg(RslRlOnPolicyRunnerCfg):
+         num_learning_epochs=5,
+         num_mini_batches=4,
+         learning_rate=1.0e-3,
+-        schedule="adaptive",
++        schedule="fixed",
+         gamma=0.99,
+         lam=0.95,
+         desired_kl=0.01,
+@@ -67,7 +67,7 @@ class AnymalCFlatPPORunnerWithSymmetryCfg(AnymalCFlatPPORunnerCfg):
+         num_learning_epochs=5,
+         num_mini_batches=4,
+         learning_rate=1.0e-3,
+-        schedule="adaptive",
++        schedule="fixed",
+         gamma=0.99,
+         lam=0.95,
+         desired_kl=0.01,
+@@ -91,7 +91,7 @@ class AnymalCRoughPPORunnerWithSymmetryCfg(AnymalCRoughPPORunnerCfg):
+         num_learning_epochs=5,
+         num_mini_batches=4,
+         learning_rate=1.0e-3,
+-        schedule="adaptive",
++        schedule="fixed",
+         gamma=0.99,
+         lam=0.95,
+         desired_kl=0.01,
